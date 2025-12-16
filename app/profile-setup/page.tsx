@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent } from 'react'
 import Link from 'next/link'
+import { QrCode, Question, TwitterLogo, DiscordLogo } from "phosphor-react"
 
 export default function ProfileFlow() {
   const [displayName, setDisplayName] = useState('CyberDrifter')
@@ -44,7 +45,7 @@ export default function ProfileFlow() {
         </Link>
         <div className="flex items-center gap-6">
           <button className="hidden md:flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
-            <span className="material-symbols-outlined text-[20px]">help</span>
+            <Question size={20} weight="bold" />
             Help
           </button>
           <div className="h-8 w-[1px] bg-glass-border hidden md:block"></div>
@@ -101,7 +102,7 @@ export default function ProfileFlow() {
               <div className="flex flex-col-reverse md:flex-row gap-4 items-center justify-between mt-4">
                 <Link href="/" className="text-slate-400 text-sm hover:text-white transition-colors">Skip for now</Link>
                 <Link href="/" className="w-full md:w-auto bg-primary text-deep-blue font-bold px-8 py-4 rounded-full shadow-neon-green hover:shadow-[0_0_30px_-5px_rgba(43,238,121,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
-                  <span className="material-symbols-outlined">qr_code_2</span>
+                  <QrCode size={20} weight="bold" />
                   Save & Generate QR
                 </Link>
               </div>
@@ -134,12 +135,12 @@ export default function ProfileFlow() {
               <div className="flex justify-center gap-4 z-10 pt-6 border-t border-glass-border mt-auto">
                 {twitter && (
                   <a href={`https://twitter.com/${twitter.replace('@','')}`} target="_blank" rel="noopener noreferrer" className="size-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-110">
-                    <span className="material-symbols-outlined text-sm">twitter</span>
+                    <TwitterLogo size={20} weight="bold" />
                   </a>
                 )}
                 {discord && (
                   <a href={`https://discord.com/users/${discord}`} target="_blank" rel="noopener noreferrer" className="size-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-110">
-                    <span className="material-symbols-outlined text-sm">discord</span>
+                    <DiscordLogo size={20} weight="bold" />
                   </a>
                 )}
               </div>
